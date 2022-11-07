@@ -3,7 +3,7 @@ import bannerImg from "../../image/banner.png"
 
 const Banner = () => {
     return (
-        <div className='bg-gray-800 flex items-center gap-10 justify-between  p-5'>
+        <div className='bg-gray-800 flex items-center gap-10 justify-between rounded-xl  p-5'>
             <div>
                 <img className='w-96 h-60' src={bannerImg} alt="" />
             </div>
