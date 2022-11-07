@@ -3,7 +3,7 @@ import Banner from '../Banner/Banner';
 
 const Home = () => {
     return (
-        <div className='bg-black px-20'>
+        <div className='bg-black px-20 py-3'>
             <Banner />
         </div>
     );
