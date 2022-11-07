@@ -1,9 +1,10 @@
+import { RouterProvider } from "react-router-dom";
+import router from "./routes/routes";
 
 function App() {
   return (
-    <div>
-      <h2>Rubel Digital Studio</h2>
-    </div>
+    <RouterProvider router={router} />
+
   );
 }
 
