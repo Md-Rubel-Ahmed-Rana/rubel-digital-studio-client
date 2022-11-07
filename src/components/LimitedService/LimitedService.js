@@ -25,7 +25,7 @@ const LimitedService = () => {
                             <p>Rating: {service.rating}</p>
                         </div>
                         <p>{service.desc.slice(0, 100)}...</p>
-                        <p className='text-center'><button className='bg-pink-500 text-xl w-1/2 font-semibold px-5 py-2 rounded'>Details</button></p>
+                        <p className='text-center'><button className='bg-pink-500 text-xl w-1/2 font-semibold px-5 py-2 rounded'><Link to={`/services/${service._id}`}>Details</Link></button></p>
                     </div>)
                 }
             </div>
