@@ -12,9 +12,10 @@ const Header = () => {
             <div>
                 <ul className='flex text-white gap-4 text-xl'>
                     <li> <Link>Home</Link> </li>
-                    <li> <Link>My Reviews</Link> </li>
+                    <li> <Link>My Reviews</Link></li>
+                    <li> <Link>Add Service</Link></li>
                     <li> <Link>Blog</Link> </li>
-                    <li> <Link>Login</Link> </li>
+                    <li> <Link to="/login">Login</Link> </li>
                     <li> <Link>Logout</Link> </li>
                 </ul>
             </div>
