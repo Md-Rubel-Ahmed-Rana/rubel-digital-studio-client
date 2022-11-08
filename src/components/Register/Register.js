@@ -17,14 +17,22 @@ const Register = () => {
 
     return (
         <div className='bg-black px-20 py-10'>
-            <form onSubmit={handleSubmit(onSubmit)} className="bg-gray-800 w-1/2 h-60 mx-auto py-10 text-center rounded-xl">
-                <input className='py-1 px-2 w-1/2'  type="email" {...register("email", { required: true })} />
+            <form onSubmit={handleSubmit(onSubmit)} className="bg-gray-800 w-1/2 mx-auto py-10 text-center rounded-xl">
+                <input className='py-1 px-2 w-1/2' type="text" {...register("name", { required: true })} placeholder="Name" />
+                
                 <br />
                 <br />
-                <input className='py-1 px-2 w-1/2'  type="password" {...register("password", { required: true })} />
+                <input className='py-1 px-2 w-1/2' type="email" {...register("email", { required: true })} placeholder="Email" />
+                <br />
+                <br />
+                <input className='py-1 px-2 w-1/2' type="text" {...register("photoURL", { required: true })} placeholder="PhotoURL" />
+                <br />
+                <br />
+                <input className='py-1 px-2 w-1/2' type="password" {...register("password", { required: true })} placeholder="Password" />
                 <br />
                 <br />
                 <input type="submit" className='bg-blue-800 text-xl w-1/2 cursor-pointer text-white px-10 py-2 rounded' value="Register" />
+                <p className='border-2 w-2/5 mx-auto cursor-pointer rounded-xl text-white bg-gray-600 hover:bg-blue-600 hover:border-gray-600 px-4 py-1 my-2 border-blue-500'>Login with Google</p>
             </form>
         </div>
     );
