@@ -3,16 +3,29 @@ import { useForm } from "react-hook-form";
 import {AuthContext} from '../../contexts/UserContext';
 
 const Register = () => {
-    const { register, handleSubmit } = useForm();
-    const { createUser, logout } = useContext(AuthContext)
+    const { register, handleSubmit } = useForm(); 
+    const { createUser, logout, updateUserProfile } = useContext(AuthContext)
 
     const onSubmit = (value) => {
-        const { email, password } = value;
+        const { name, photoURL,  email, password } = value;
+      
         createUser(email, password)
         .then(() =>{
-            logout()
+            handleProfileUpdate(name, photoURL )
+            logout();
+            value = ""
         })
         .catch((err) => console.log(err))
+    }
+
+    const handleProfileUpdate = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUserProfile(profile)
+        .then(() =>{})
+        .catch((error) => console.log(error))
     }
 
     return (

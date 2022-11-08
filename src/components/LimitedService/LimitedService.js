@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const LimitedService = () => {
     const [services, setServices] = useState([]);
@@ -18,7 +19,11 @@ const LimitedService = () => {
             <div className='flex gap-5 p-2'>
                 {
                     services.map((service) => <div className='bg-gray-700 p-3 rounded ' key={service._id}>
-                        <img className='w-full h-40 rounded' src={service.img} alt="" />
+                        <PhotoProvider>
+                            <PhotoView src={service.img}>
+                                <img className='w-full h-40 rounded' src={service.img} alt="" />
+                            </PhotoView>
+                        </PhotoProvider>
                         <h4 className='text-2xl font-bold text-center mb-2'>{service.name}</h4>
                         <div className='flex justify-between text-xl'>
                             <p>Price: {service.price}TK</p>

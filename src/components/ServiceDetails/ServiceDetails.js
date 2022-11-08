@@ -9,10 +9,27 @@ const ServiceDetails = () => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (value) => {
-        const { name, email, photoURL, reviw   } = value;
+        const review = {
+            customer_name: value.name,
+            email: value.email,
+            service_name: service.name,
+            service_price: service.price,
+            photo: service.img,
+            customer_review: value.reviw
+        }
 
-        console.log(value);
-        console.log(name, email, photoURL, reviw);
+        console.log(review);
+
+        fetch("http://localhost:5000/reviews", {
+            method: "POST",
+            headers: {
+                "content-type" : "application/json"
+            },
+            body: JSON.stringify(review)
+        })
+        .then((res) => res.json())
+        .then((data) => console.log(data))
+        .catch((error) => console.log(error))
     }
     console.log(user);
     return (
