@@ -17,7 +17,7 @@ const Reviews = () => {
     }, [user?.email])
 
 
-    // Delete review 
+    // Delete review
     const handleDeleteReview  = (id) => {
         fetch(`http://localhost:5000/reviews/${id}`, {
             method: "DELETE"

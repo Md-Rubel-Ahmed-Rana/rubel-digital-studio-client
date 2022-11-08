@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ReviewTable = ({ review, handleDeleteReview }) => {
-    const {_id, customer_name, email, service_name, service_price, photo, customer_review } = review
+    const {_id, customer_name, email, service_name, service_price, photo, customer_review } = review;
     return (
         <tr>
             <td>
@@ -27,7 +28,7 @@ const ReviewTable = ({ review, handleDeleteReview }) => {
                 <span className="text-md font-bold"> {customer_review} </span>
             </td>
             <td>
-                <span className="text-md bg-blue-500 text-white px-2 py-1 rounded cursor-pointer">Edit</span>
+                <span className="text-md bg-blue-500 text-white px-2 py-1 rounded cursor-pointer"> <Link to={`/update/${_id}`}>Edit</Link> </span>
             </td>
             <td>
                 <span onClick={() => handleDeleteReview(_id)} className="text-md bg-red-500 text-white px-2 py-1 rounded cursor-pointer">Delete</span>
