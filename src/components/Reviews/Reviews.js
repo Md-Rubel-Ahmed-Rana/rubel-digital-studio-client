@@ -10,7 +10,19 @@ const Reviews = () => {
         fetch("http://localhost:5000/reviews")
         .then((res) => res.json())
         .then((data) => setReviews(data))
-    }, [])
+    }, [reviews])
+
+
+    const handleDeleteReview  = (id) => {
+        console.log(id);
+        fetch(`http://localhost:5000/reviews/${id}`, {
+            method: "DELETE"
+        })
+        .then((res) => res.json())
+        .then((data) => console.log(data))
+        .catch((err) => console.log(err))
+    }
+
 
     return (
         <div className="px-20 py-10">
@@ -30,7 +42,10 @@ const Reviews = () => {
                     </thead>
                     <tbody className='text-center'>
                         {
-                            reviews.map((review) => <ReviewTable review={review} key={review._id} />)
+                            reviews.map((review) => <ReviewTable 
+                            review={review}
+                            handleDeleteReview={handleDeleteReview}
+                            key={review._id} />)
                         }
                     </tbody>
                 </table>

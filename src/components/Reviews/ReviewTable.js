@@ -1,13 +1,13 @@
 import React from 'react';
 
-const ReviewTable = ({ review }) => {
-    const { customer_name, email, service_name, service_price, photo, customer_review } = review
+const ReviewTable = ({ review, handleDeleteReview }) => {
+    const {_id, customer_name, email, service_name, service_price, photo, customer_review } = review
     return (
         <tr>
             <td>
                 <div className="avatar">
-                    <div className="mask mask-squircle">
-                        <img className='w-12 h-12' src={photo} alt="ServicePicture" />
+                    <div className="mask mask-squircle w-12 h-12">
+                        <img  src={photo} alt="ServicePicture" />
                     </div>
                 </div>
             </td>
@@ -30,7 +30,7 @@ const ReviewTable = ({ review }) => {
                 <span className="text-md bg-blue-500 text-white px-2 py-1 rounded cursor-pointer">Edit</span>
             </td>
             <td>
-                <span className="text-md bg-red-500 text-white px-2 py-1 rounded cursor-pointer">Delete</span>
+                <span onClick={() => handleDeleteReview(_id)} className="text-md bg-red-500 text-white px-2 py-1 rounded cursor-pointer">Delete</span>
             </td>
         </tr>
     );
