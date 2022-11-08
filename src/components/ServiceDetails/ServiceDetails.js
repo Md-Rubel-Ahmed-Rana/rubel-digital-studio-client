@@ -18,7 +18,6 @@ const ServiceDetails = () => {
             customer_review: value.reviw
         }
 
-        console.log(review);
 
         fetch("http://localhost:5000/reviews", {
             method: "POST",
@@ -31,7 +30,7 @@ const ServiceDetails = () => {
         .then((data) => console.log(data))
         .catch((error) => console.log(error))
     }
-    console.log(user);
+
     return (
         <div className='px-20 bg-black  py-10'>
            <div className='w-1/2 mx-auto bg-gray-800 p-4 mb-4 rounded text-white'>
@@ -47,24 +46,24 @@ const ServiceDetails = () => {
                 </div>
            </div> 
             <div className='w-1/2 mx-auto bg-gray-800 p-4 rounded text-white'>
-            <h3 className='text-3xl font-bold text-center'>Give Review Here</h3>
-            <div>
-                    <form onSubmit={handleSubmit(onSubmit)} className="bg-gray-800  mx-auto py-10 text-center rounded-xl">
-                        <input className='py-1 px-2 w-full text-black' defaultValue={user?.displayName} type="text" {...register("name", { required: true })} placeholder="Name" />
-                        <br />
-                        <br />
-                        <input defaultValue={user?.email} className='py-1 px-2 w-full text-black' type="email" {...register("email", { required: true })} placeholder="Email" />
-                        <br />
-                        <br />
-                        <input defaultValue={user?.photoURL ? user?.photoURL : "PhototURL not added"} className='py-1 px-2 w-full text-black' type="text" {...register("photoURL", { required: true })} placeholder="PhotoURL" />
-                        <br />
-                        <br />
-                        <textarea className='py-1 px-2 w-full text-black' type="text" {...register("reviw", { required: true })} placeholder="Your review" />
-                        <br />
-                        <br />
-                        <input type="submit" className='bg-blue-800 text-xl   cursor-pointer text-white px-10 py-2 rounded' value="Add Review" />
-                    </form>
-            </div>
+                <h3 className='text-3xl font-bold text-center'>Give Review Here</h3>
+                <div>
+                        <form onSubmit={handleSubmit(onSubmit)} className="bg-gray-800  mx-auto py-10 text-center rounded-xl">
+                            <input className='py-1 px-2 w-full text-black' defaultValue={user?.displayName} type="text" {...register("name", { required: true })} placeholder="Name" />
+                            <br />
+                            <br />
+                            <input defaultValue={user?.email} className='py-1 px-2 w-full text-black' type="email" {...register("email", { required: true })} placeholder="Email" />
+                            <br />
+                            <br />
+                            <input defaultValue={user?.photoURL ? user?.photoURL : "PhototURL not added"} className='py-1 px-2 w-full text-black' type="text" {...register("photoURL", { required: true })} placeholder="PhotoURL" />
+                            <br />
+                            <br />
+                            <textarea className='py-1 px-2 w-full text-black' type="text" {...register("reviw", { required: true })} placeholder="Your review" />
+                            <br />
+                            <br />
+                            <input type="submit" className='bg-blue-800 text-xl   cursor-pointer text-white px-10 py-2 rounded' value="Add Review" />
+                        </form>
+                </div>
            </div>
         </div>
     );

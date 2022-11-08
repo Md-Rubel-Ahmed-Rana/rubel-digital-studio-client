@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import UserContext from './contexts/UserContext';
 import 'react-photo-view/dist/react-photo-view.css';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
