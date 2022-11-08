@@ -1,13 +1,24 @@
-import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { useForm } from "react-hook-form";
+import { AuthContext } from '../../contexts/UserContext';
 
 const ServiceDetails = () => {
+    const { user } = useContext(AuthContext)
     const service = useLoaderData();
-    console.log(service);
+    const { register, handleSubmit } = useForm();
+
+    const onSubmit = (value) => {
+        const { name, email, photoURL, reviw   } = value;
+
+        console.log(value);
+        console.log(name, email, photoURL, reviw);
+    }
+    console.log(user);
     return (
-        <div className='px-20 bg-black flex gap-10 py-10'>
-           <div className='w-full bg-gray-800 p-4 rounded text-white'>
-                <h3 className='text-4xl'>Service Section</h3>
+        <div className='px-20 bg-black  py-10'>
+           <div className='w-1/2 mx-auto bg-gray-800 p-4 mb-4 rounded text-white'>
+                <h3 className='text-4xl text-center font-bold my-2'>Service you have chosen!!</h3>
                 <div>
                     <img className='w-full h-40' src={service.img} alt="" />
                     <h4 className='text-2xl font-bold text-center mb-2'>{service.name}</h4>
@@ -18,13 +29,24 @@ const ServiceDetails = () => {
                     <p>{service.desc}</p>
                 </div>
            </div> 
-            <div className='w-full bg-gray-800 p-4 rounded text-white'>
-            <h3 className='text-4xl'>Review Section</h3>
+            <div className='w-1/2 mx-auto bg-gray-800 p-4 rounded text-white'>
+            <h3 className='text-3xl font-bold text-center'>Give Review Here</h3>
             <div>
-                <h4>Viewer Image</h4>
-                <h3>Viewer Name</h3>
-                <p>Viewer comment</p>
-                <p>Viewer Rating</p>
+                    <form onSubmit={handleSubmit(onSubmit)} className="bg-gray-800  mx-auto py-10 text-center rounded-xl">
+                        <input className='py-1 px-2 w-full text-black' defaultValue={user?.displayName} type="text" {...register("name", { required: true })} placeholder="Name" />
+                        <br />
+                        <br />
+                        <input defaultValue={user?.email} className='py-1 px-2 w-full text-black' type="email" {...register("email", { required: true })} placeholder="Email" />
+                        <br />
+                        <br />
+                        <input defaultValue={user?.photoURL ? user?.photoURL : "PhototURL not added"} className='py-1 px-2 w-full text-black' type="text" {...register("photoURL", { required: true })} placeholder="PhotoURL" />
+                        <br />
+                        <br />
+                        <textarea className='py-1 px-2 w-full text-black' type="text" {...register("reviw", { required: true })} placeholder="Your review" />
+                        <br />
+                        <br />
+                        <input type="submit" className='bg-blue-800 text-xl   cursor-pointer text-white px-10 py-2 rounded' value="Add Review" />
+                    </form>
             </div>
            </div>
         </div>
