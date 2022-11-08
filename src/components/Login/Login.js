@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
 import useTitle from '../hooks/useTitle';
 import swal from 'sweetalert';
@@ -8,7 +8,8 @@ import swal from 'sweetalert';
 
 const Login = () => {
     useTitle("Login")
-    const { userLogin, setUser, googeLogin } = useContext(AuthContext)
+    const { userLogin, setUser, googeLogin } = useContext(AuthContext);
+    const navigate = useNavigate()
     const { register, handleSubmit } = useForm();
     const onSubmit = (value) => {
         const {email, password} = value;
@@ -17,6 +18,7 @@ const Login = () => {
             const user = result.user;
             setUser(user);
             swal("Good job!", "Logged in successfully", "success");
+            navigate("/")
         })
         .catch((error) => console.log(error))
     }
@@ -27,6 +29,7 @@ const Login = () => {
             const user = result.user;
             setUser(user)
             swal("Good job!", "Logged in successfully", "success");
+            navigate("/")
         })
         .catch((error) => {
             console.log(error);

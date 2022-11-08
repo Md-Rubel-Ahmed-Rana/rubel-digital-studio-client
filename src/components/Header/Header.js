@@ -1,14 +1,16 @@
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
 import logo from "../../image/logo.png"
 import swal from 'sweetalert';
 
 const Header = () => {
-    const { user, logout } = useContext(AuthContext)
+    const { user, logout } = useContext(AuthContext);
+    const navigate = useNavigate()
     const handleLogOut = () => {
         logout();
         swal("Done", "Logged out successfully", "success");
+        navigate("/")
     }
     return (
         <div className='flex justify-between items-center py-3 px-20 bg-blue-900'>
