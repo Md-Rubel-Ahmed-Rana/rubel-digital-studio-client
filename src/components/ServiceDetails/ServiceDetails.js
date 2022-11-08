@@ -2,6 +2,7 @@ import { useLoaderData } from 'react-router-dom';
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { AuthContext } from '../../contexts/UserContext';
+import swal from 'sweetalert';
 
 const ServiceDetails = () => {
     const { user } = useContext(AuthContext)
@@ -27,7 +28,9 @@ const ServiceDetails = () => {
             body: JSON.stringify(review)
         })
         .then((res) => res.json())
-        .then((data) => console.log(data))
+        .then(() => {
+            swal("Good job!", "Review added successfully", "success");
+        })
         .catch((error) => console.log(error))
     }
 

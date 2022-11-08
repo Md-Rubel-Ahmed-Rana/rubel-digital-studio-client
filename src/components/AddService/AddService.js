@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import useTitle from '../hooks/useTitle';
+import swal from 'sweetalert';
 
 const AddService = () => {
     useTitle("Add Service")
@@ -15,7 +16,9 @@ const AddService = () => {
             body: JSON.stringify(value)
         })
             .then((res) => res.json())
-            .then((data) => console.log(data))
+            .then(() => {
+                swal("Good job!", "Service successfully", "success");
+            })
             .catch((error) => console.log(error))
 
     }

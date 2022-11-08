@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
 import useTitle from '../hooks/useTitle';
+import swal from 'sweetalert';
+
 
 const Login = () => {
     useTitle("Login")
@@ -13,7 +15,8 @@ const Login = () => {
         userLogin(email, password)
         .then((result) => {
             const user = result.user;
-            setUser(user)
+            setUser(user);
+            swal("Good job!", "Logged in successfully", "success");
         })
         .catch((error) => console.log(error))
     }
@@ -23,7 +26,7 @@ const Login = () => {
         .then((result) => {
             const user = result.user;
             setUser(user)
-            console.log(user);
+            swal("Good job!", "Logged in successfully", "success");
         })
         .catch((error) => {
             console.log(error);

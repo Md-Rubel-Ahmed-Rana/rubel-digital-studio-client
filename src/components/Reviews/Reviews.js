@@ -13,8 +13,8 @@ const Reviews = () => {
     }, [])
 
     return (
-        <div className="overflow-x-auto px-20 py-10 w-full">
-            <div >
+        <div className="px-20 py-10">
+            <div>
                 <table className="table w-full border-2">
                     <thead className='text-center'>
                         <tr>

@@ -2,10 +2,14 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
 import logo from "../../image/logo.png"
+import swal from 'sweetalert';
 
 const Header = () => {
     const { user, logout } = useContext(AuthContext)
-    console.log(user);
+    const handleLogOut = () => {
+        logout();
+        swal("Done", "Logged out successfully", "success");
+    }
     return (
         <div className='flex justify-between items-center py-3 px-20 bg-blue-900'>
             <div className='flex items-center gap-3'>
@@ -25,7 +29,7 @@ const Header = () => {
                     }
                     <li> <Link to="/blogs">Blog</Link> </li>
                     {
-                        user && user?.email ? <li onClick={logout}> <Link>Logout</Link> </li> : ""
+                        user && user?.email ? <li onClick={handleLogOut}> <Link>Logout</Link> </li> : ""
                     }
                 </ul>
             </div>
