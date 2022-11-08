@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 // import ReviewTable from './ReviewTable';
 import "./Reviews.css"
+import ReviewTable from './ReviewTable';
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
@@ -12,41 +13,29 @@ const Reviews = () => {
     }, [])
 
     return (
-        <div className='px-20 py-10 bg-black'>
-            <table id='table' className='bg-gray-800  text-white mx-auto rounded'>
-                <thead>
-                    <th>Avatar</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Service</th>
-                    <th>Price</th>
-                    <th>Review</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </thead>
-                <hr />
-                <tbody>
-                    {/* {
-                        reviews.map((review) => <ReviewTable
-                            key={review._id}
-                            review={review}
-                        />)
-                    } */}
-                    {
-                        reviews.map((review) => <tr className='m-2 p-5'>
-                            <td> <img className='w-12 h-12' src={review.photo} alt="" /> </td>
-                            <td>{review.customer_name}</td>
-                            <td>{review.email}</td>
-                            <td>{review.service_name}</td>
-                            <td>{review.service_price}</td>
-                            <td>{review.customer_review}</td>
-                            <td>Edit</td>
-                            <td>Delete</td>
-                        </tr>)
-                    }
-                </tbody>
-            </table>
+        <div className="overflow-x-auto px-20 py-10 w-full">
+            <div >
+                <table className="table w-full border-2">
+                    <thead className='text-center'>
+                        <tr>
+                            <th className="text-xl">Avatar</th>
+                            <th className="text-xl">Name</th>
+                            <th className="text-xl">Email</th>
+                            <th className="text-xl">Service</th>
+                            <th className="text-xl">Price</th>
+                            <th className="text-xl">Review</th>
+                            <th className="text-xl">Edit</th>
+                            <th className="text-xl">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody className='text-center'>
+                        {
+                            reviews.map((review) => <ReviewTable review={review} key={review._id} />)
+                        }
+                    </tbody>
+                </table>
             </div>
+        </div>
     );
 };
 
