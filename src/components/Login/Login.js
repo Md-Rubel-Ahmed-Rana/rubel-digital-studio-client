@@ -2,8 +2,10 @@ import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
+import useTitle from '../hooks/useTitle';
 
 const Login = () => {
+    useTitle("Login")
     const { userLogin, setUser, googeLogin } = useContext(AuthContext)
     const { register, handleSubmit } = useForm();
     const onSubmit = (value) => {

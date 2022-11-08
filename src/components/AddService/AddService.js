@@ -1,7 +1,9 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import useTitle from '../hooks/useTitle';
 
 const AddService = () => {
+    useTitle("Add Service")
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (value) => {

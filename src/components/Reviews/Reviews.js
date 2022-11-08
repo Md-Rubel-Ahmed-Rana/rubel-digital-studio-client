@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-// import ReviewTable from './ReviewTable';
-import "./Reviews.css"
+import useTitle from '../hooks/useTitle';
 import ReviewTable from './ReviewTable';
 
 const Reviews = () => {
+    useTitle("Reviews")
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
