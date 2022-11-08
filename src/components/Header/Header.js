@@ -1,8 +1,11 @@
-import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/UserContext';
 import logo from "../../image/logo.png"
 
 const Header = () => {
+    const { user, logout } = useContext(AuthContext)
+    console.log(user);
     return (
         <div className='flex justify-between items-center py-3 px-20 bg-blue-900'>
             <div className='flex items-center gap-3'>
@@ -11,12 +14,19 @@ const Header = () => {
             </div>
             <div>
                 <ul className='flex text-white gap-4 text-xl'>
-                    <li> <Link>Home</Link> </li>
-                    <li> <Link>My Reviews</Link></li>
-                    <li> <Link>Add Service</Link></li>
+                    <li> <Link to="/home">Home</Link> </li>
+                    {
+                        user?.email ? 
+                        <>
+                            <li> <Link>My Reviews</Link></li>
+                            <li> <Link>Add Service</Link></li>
+                        </>
+                        : <li> <Link to="/login">Login</Link> </li>
+                    }
                     <li> <Link>Blog</Link> </li>
-                    <li> <Link to="/login">Login</Link> </li>
-                    <li> <Link>Logout</Link> </li>
+                    {
+                        user && user?.email ? <li onClick={logout}> <Link>Logout</Link> </li> : ""
+                    }
                 </ul>
             </div>
         </div>

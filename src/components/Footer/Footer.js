@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="flex justify-around gap-5 py-5 bg-gray-700 text-white">
                 <div>
                     <h5>Contact Details</h5>
-                    <p>Websile: https://rubel-digital-studio.web.app</p>
+                    <p>Websile: <a href="https://rubel-digital-studio.web.app" target="_blank" rel="noreferrer">https://rubel-digital-studio.web.app</a> </p>
                     <p className='flex gap-3 items-center my-2'><FaMapMarkerAlt />  Office: Haji Market-20, Companigonj, Sylhet.</p>
                     <p className='flex gap-3 items-center my-2'> <small><FaEnvelope /></small> Official:<small>mdrubelahmedrana521@gmail.com</small> </p>
                     <p className='flex gap-3 items-center my-2'><FaPhoneAlt /> Phone: 01758-049882</p>
