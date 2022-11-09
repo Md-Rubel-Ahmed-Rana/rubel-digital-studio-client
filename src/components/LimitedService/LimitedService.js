@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
-import { ColorRing } from 'react-loader-spinner'
+import { ColorRing } from 'react-loader-spinner';
+import { FaArrowRight } from "react-icons/fa";
 
 const LimitedService = () => {
     const [services, setServices] = useState([]);
@@ -50,7 +51,7 @@ const LimitedService = () => {
                             }
                         </div>
                         <div className='text-center py-6'>
-                            <button className='bg-pink-500 rounded font-bold text-3xl px-4 py-2'> <Link to="/services">See All</Link> </button>
+                            <button className='bg-pink-500 rounded font-bold text-3xl px-4 py-2'> <Link to="/services"> <p className='flex items-center gap-3'> <small>See All </small><FaArrowRight /></p> </Link> </button>
                         </div>
                 </> 
             }

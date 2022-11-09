@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../hooks/useTitle';
 
 const ForceToLogin = () => {
+    useTitle("Force to login")
     return (
         <div className='bg-black px-20 py-10'>
             <div className='w-2/5 bg-gray-800 rounded py-10 px-5 text-white mx-auto text-center'>

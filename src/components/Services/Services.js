@@ -2,8 +2,10 @@ import React, { useEffect } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { ColorRing } from 'react-loader-spinner'
+import useTitle from '../hooks/useTitle';
 
 const Services = () => {
+    useTitle("Services")
     const services = useLoaderData();
 
     // prevent from automatically scroll down 

@@ -3,8 +3,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { AuthContext } from '../../contexts/UserContext';
 import swal from 'sweetalert';
+import useTitle from '../hooks/useTitle';
 
 const ServiceDetails = () => {
+    useTitle("Service Details")
     const { user } = useContext(AuthContext);
     const [reviews, setReviews] = useState([])
     const service = useLoaderData();
