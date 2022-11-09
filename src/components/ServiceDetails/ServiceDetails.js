@@ -12,6 +12,13 @@ const ServiceDetails = () => {
     const service = useLoaderData();
     const { register, handleSubmit } = useForm();
 
+
+    // prevent from automatically scroll down 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+
     const onSubmit = (value) => {
         const review = {
             customer_name: value.name,
@@ -19,7 +26,8 @@ const ServiceDetails = () => {
             service_name: service.name,
             service_price: service.price,
             photo: service.img,
-            customer_review: value.reviw
+            customer_review: value.reviw,
+            time: new Date().getTime()
         }
 
 
@@ -31,8 +39,12 @@ const ServiceDetails = () => {
             },
             body: JSON.stringify(review)
         })
-        .then((res) => res.json())
-        .then(() => {
+        .then((res) => {
+            console.log(res);
+            return res.json()
+        })
+        .then((data) => {
+            console.log(data);
             swal("Good job!", "Review added successfully", "success");
         })
         .catch((error) => console.log(error))

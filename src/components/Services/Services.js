@@ -44,6 +44,7 @@ const Services = () => {
                                         <p className='text-yellow-500 font-bold'>Rating: {service.rating}</p>
                                     </div>
                                     <p className='text-xl'>{service.desc.slice(0, 100)}...</p>
+
                                     <p className='text-center'><button className='bg-pink-500 text-xl w-1/2 font-semibold px-5 py-2 mt-2 rounded'> <Link to={`/services/${service._id}`}>Details</Link> </button></p>
                                 </div>)
                             }
