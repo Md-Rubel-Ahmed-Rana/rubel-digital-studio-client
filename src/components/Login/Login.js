@@ -1,15 +1,16 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
 import useTitle from '../hooks/useTitle';
-import swal from 'sweetalert';
+
+import useToken from '../hooks/useToken';
 
 
 const Login = () => {
-    useTitle("Login")
+    useTitle("Login");
+    const storeToken = useToken();
     const { userLogin, setUser, googeLogin } = useContext(AuthContext);
-    const navigate = useNavigate()
     const { register, handleSubmit } = useForm();
     const onSubmit = (value) => {
         const {email, password} = value;
@@ -18,11 +19,10 @@ const Login = () => {
         .then((result) => {
             const user = result.user;
             setUser(user);
-            swal("Good job!", "Logged in successfully", "success");
+            const currentUser = { email: user.email}
 
-        
-
-            navigate("/")
+            // get jwt token and save it localStorage
+            storeToken(currentUser); 
         })
         .catch((error) => console.log(error))
     }
@@ -32,8 +32,10 @@ const Login = () => {
         .then((result) => {
             const user = result.user;
             setUser(user)
-            swal("Good job!", "Logged in successfully", "success");
-            navigate("/")
+            const currentUser = {email: user.email}
+
+            // get jwt token and save it localStorage
+            storeToken(currentUser)
         })
         .catch((error) => {
             console.log(error);

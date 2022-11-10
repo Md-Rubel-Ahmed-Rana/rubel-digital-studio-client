@@ -28,7 +28,7 @@ const ReviewTable = ({ review, handleDeleteReview }) => {
                 <span className="text-md font-bold"> {customer_review} </span>
             </td>
             <td>
-                <span className="text-md bg-blue-500 text-white px-2 py-1 rounded cursor-pointer"> <Link to={`/update/${_id}`}>Edit</Link> </span>
+                <span className="text-md bg-blue-500 text-white px-2 py-1 rounded cursor-pointer"> <Link to={`/update/${review._id}`}>Edit</Link> </span>
             </td>
             <td>
                 <span onClick={() => handleDeleteReview(_id)} className="text-md bg-red-500 text-white px-2 py-1 rounded cursor-pointer">Delete</span>

@@ -8,17 +8,17 @@ const UpdateReview = () => {
     const review = useLoaderData();
     const {user} = useContext(AuthContext);
 
+
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate()
 
     const onSubmit = (value) => {
-
         const newReview = {
-            // customer_name: value.name,
-            // email: value.email,
-            // service_name: review.name,
-            // service_price: review.price,
-            // photo: value.photoURL,
+            customer_name: value.name,
+            email: value.email,
+            service_name: review.name,
+            service_price: review.price,
+            photo: value.photoURL,
             customer_review: value.reviw,
             time: new Date().getTime()
         }
@@ -45,7 +45,7 @@ const UpdateReview = () => {
             <div className='w-1/2 mx-auto p-10'>
                 <h4 className='text-white text-2xl text-center'>Please update your review</h4>
                 <form onSubmit={handleSubmit(onSubmit)} className="bg-gray-800  mx-auto p-10  text-center rounded-xl">
-                    {/* <input className='py-1 px-2 w-full text-black' defaultValue={user?.displayName} type="text" {...register("name", { required: true })} placeholder="Name" />
+                    <input className='py-1 px-2 w-full text-black' defaultValue={user?.displayName} type="text" {...register("name", { required: true })} placeholder="Name" />
                     <br />
                     <br />
                     <input defaultValue={user?.email} className='py-1 px-2 w-full text-black' type="email" {...register("email", { required: true })} placeholder="Email" />
@@ -53,7 +53,7 @@ const UpdateReview = () => {
                     <br />
                     <input defaultValue={user?.photoURL ? user?.photoURL : "PhototURL not added"} className='py-1 px-2 w-full text-black' type="text" {...register("photoURL", { required: true })} placeholder="PhotoURL" />
                     <br />
-                    <br /> */}
+                    <br />
                     <textarea defaultValue={review.customer_review} className='py-1 px-2 w-full text-black' type="text" {...register("reviw", { required: true })} placeholder="Your review" />
                     <br />
                     <br />

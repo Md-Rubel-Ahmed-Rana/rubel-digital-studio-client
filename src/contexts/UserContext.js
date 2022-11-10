@@ -31,7 +31,8 @@ const UserContext = ({ children }) => {
     }
 
     const logout = () => {
-        setLoading(true)
+        setLoading(true);
+        localStorage.removeItem("access-token")
         return signOut(auth)
     }
     const authInfo = { user, setUser, createUser, userLogin, logout, googeLogin, updateUserProfile, loading }
