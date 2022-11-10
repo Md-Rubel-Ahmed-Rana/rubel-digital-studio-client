@@ -14,7 +14,7 @@ const Services = () => {
     }, []);
 
     return (
-        <div className=' bg-gray-800 text-white px-20 py-4'>
+        <div className=' bg-gray-800 text-white lg:px-20 py-4'>
             {
                 services.length === 0 ? <div className='text-center'>
                     <h3 className='text-2xl'>Data Loading...</h3>
@@ -30,7 +30,7 @@ const Services = () => {
                 </div> 
                 : <>
                         <h3 className='text-4xl py-2 text-white text-center'>My Services</h3>
-                        <div className='grid grid-cols-3 gap-5 p-2'>
+                        <div className='grid lg:grid-cols-3 gap-5 p-2'>
                             {
                                 services.map((service) => <div className='bg-gray-700 p-3 rounded ' key={service._id}>
                                     <PhotoProvider>

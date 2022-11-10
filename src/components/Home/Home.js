@@ -8,7 +8,7 @@ import Payments from '../Payments/Payments';
 const Home = () => {
     useTitle("Home")
     return (
-        <div className='bg-black px-20 py-3'>
+        <div className='bg-black lg:px-20 py-3'>
             <Banner />
             <LimitedService />
             <Feedback />

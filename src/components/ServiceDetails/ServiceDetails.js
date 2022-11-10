@@ -64,10 +64,10 @@ const ServiceDetails = () => {
 
 
     return (
-        <div className='px-20 bg-black flex  py-10'>
-            <div className='w-1/2'>
+        <div className='lg:px-20 bg-black lg:flex  py-10'>
+            <div className='lg:w-1/2'>
                 <div className='w-full mx-auto bg-gray-800 p-4 mb-4 rounded text-white'>
-                    <h3 className='text-4xl text-center font-bold my-2'>Service you have chosen!!</h3>
+                    <h3 className='lg:text-4xl text-md text-center font-bold my-2'>Service you have chosen!!</h3>
                     <div>
                         <img className='w-full h-40' src={service.img} alt="" />
                         <h4 className='text-2xl font-bold text-center mb-2'>{service.name}</h4>
@@ -107,8 +107,8 @@ const ServiceDetails = () => {
                     }
 
                     </div>
-                    <div className='text-white w-1/2 py-3 px-10 text-center'>
-                        <h2 className='text-4xl text-center mb-4'>Reviews of this service: {reviews.length}</h2>
+                    <div className='text-white lg:w-1/2 py-3 lg:px-10 text-center'>
+                        <h2 className='lg:text-4xl text-xl text-center mb-4'>Reviews of this service: {reviews.length}</h2>
                         <div>
                             {
                                 reviews.length === 0 ? <h4 className='text-2xl text-center'>No reviews were added</h4>
