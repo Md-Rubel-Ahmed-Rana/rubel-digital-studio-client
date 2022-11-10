@@ -25,7 +25,7 @@ const UpdateReview = () => {
     
 
         // update review and send it to database
-        fetch(`http://localhost:5000/reviews/${review._id}`, {
+        fetch(`https://assignment-11-server-two-theta.vercel.app/reviews/${review._id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

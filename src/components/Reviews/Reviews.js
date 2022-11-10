@@ -15,7 +15,7 @@ const Reviews = () => {
 
     // get reviews with email
     useEffect(() => {
-        fetch(`http://localhost:5000/reviewsByEmail?email=${user?.email}`, {
+        fetch(`https://assignment-11-server-two-theta.vercel.app/reviewsByEmail?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem("access-token")}`
             }
@@ -33,7 +33,7 @@ const Reviews = () => {
 
     // Delete review
     const handleDeleteReview  = (id) => {
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://assignment-11-server-two-theta.vercel.app/reviews/${id}`, {
             method: "DELETE"
         })
         .then((res) => res.json())

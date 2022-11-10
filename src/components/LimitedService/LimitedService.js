@@ -9,7 +9,7 @@ const LimitedService = () => {
 
 
     useEffect(() => {
-        fetch("http://localhost:5000/limited-service")
+        fetch("https://assignment-11-server-two-theta.vercel.app/limited-service")
         .then((res) => res.json())
         .then((data) => setServices(data))
         .catch((err) => console.log(err))

@@ -8,7 +8,7 @@ const AddService = () => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (value) => {
-        fetch("http://localhost:5000/services", {
+        fetch("https://assignment-11-server-two-theta.vercel.app/services", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

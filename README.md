@@ -1,6 +1,6 @@
 # Author: Md Rubel Ahmed Rana
 ## Live Website: https://rubel-digital-studio.web.app
-### Service api: 
+### API: https://assignment-11-server-two-theta.vercel.app
 
 ### Features
 + User data is secured with JWT

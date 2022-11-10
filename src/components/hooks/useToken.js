@@ -6,7 +6,7 @@ const useToken = () => {
     const navigate = useNavigate()
     // get jwt token
     const token = (currentUser) => {
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://assignment-11-server-two-theta.vercel.app/jwt", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
