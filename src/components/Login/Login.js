@@ -13,11 +13,15 @@ const Login = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = (value) => {
         const {email, password} = value;
+
         userLogin(email, password)
         .then((result) => {
             const user = result.user;
             setUser(user);
             swal("Good job!", "Logged in successfully", "success");
+
+        
+
             navigate("/")
         })
         .catch((error) => console.log(error))

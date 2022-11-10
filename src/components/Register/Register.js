@@ -18,7 +18,7 @@ const Register = () => {
         .then(() =>{
             handleProfileUpdate(name, photoURL )
             logout();
-            swal("Good job!", "Registered in successfully", "success");
+            swal("Good job!", "Registered successfully", "success");
             navigate("/")
         })
         .catch((err) => console.log(err))

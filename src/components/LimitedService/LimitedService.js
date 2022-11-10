@@ -40,13 +40,14 @@ const LimitedService = () => {
                                             <img className='w-full h-40 rounded' src={service.img} alt="" />
                                         </PhotoView>
                                     </PhotoProvider>
-                                    <h4 className='text-2xl font-bold text-center mb-2'>{service.name}</h4>
-                                    <div className='flex justify-between text-xl'>
+                                    <h4 className='text-2xl font-bold text-center my-2'>{service.name}</h4>
+                                    <div className='flex  justify-between mb-3'>
                                         <p>Price: {service.price}TK</p>
                                         <p>Rating: {service.rating}</p>
                                     </div>
                                     <p>{service.desc.slice(0, 100)}...</p>
-                                    <p className='text-center'><button className='bg-pink-500 text-xl w-1/2 font-semibold px-5 py-2 rounded'><Link to={`/services/${service._id}`}>Details</Link></button></p>
+
+                                    <p className='text-center mt-2'><button className='bg-pink-500 text-xl w-1/2 font-semibold px-5 py-2 rounded'><Link to={`/services/${service._id}`}>Details</Link></button></p>
                                 </div>)
                             }
                         </div>

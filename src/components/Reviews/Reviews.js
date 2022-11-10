@@ -6,12 +6,14 @@ import { AuthContext } from '../../contexts/UserContext';
 
 const Reviews = () => {
     useTitle("Reviews")
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
+
+ 
 
     // get reviews with email
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`http://localhost:5000/reviewsByEmail?email=${user?.email}`)
         .then((res) => res.json())
         .then((data) => setReviews(data))
     }, [user?.email])
