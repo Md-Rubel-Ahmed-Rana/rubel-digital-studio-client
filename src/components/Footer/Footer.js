@@ -32,7 +32,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <p className='text-center py-5 bg-gray-700 text-2xl text-white'>&copy; All rights are reserved by Rubel Digital Studio. </p>
+            <p className='text-center py-5 bg-gray-700 text-2xl text-white'>&copy; All rights are reserved by Rubel Digital Studio 2022. </p>
         </div>
     );
 };

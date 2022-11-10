@@ -3,6 +3,7 @@ import Banner from '../Banner/Banner';
 import Feedback from '../Feedback/Feedback';
 import useTitle from '../hooks/useTitle';
 import LimitedService from '../LimitedService/LimitedService';
+import Payments from '../Payments/Payments';
 
 const Home = () => {
     useTitle("Home")
@@ -11,6 +12,7 @@ const Home = () => {
             <Banner />
             <LimitedService />
             <Feedback />
+            <Payments />
         </div>
     );
 };
