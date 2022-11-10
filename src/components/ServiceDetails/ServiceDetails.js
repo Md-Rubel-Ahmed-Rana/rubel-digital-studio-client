@@ -27,6 +27,7 @@ const ServiceDetails = () => {
             const review = {
                 review_id: service._id,
                 customer_name: value.name,
+                avatar: value.avatar,
                 email: value.email,
                 service_name: service.name,
                 service_price: service.price,
@@ -62,8 +63,6 @@ const ServiceDetails = () => {
         }, [service?._id])
 
 
-    console.log(reviews);
-
     return (
         <div className='px-20 bg-black flex  py-10'>
             <div className='w-1/2'>
@@ -91,7 +90,7 @@ const ServiceDetails = () => {
                                 <input defaultValue={user?.email} className='py-1 px-2 w-full text-black' type="email" {...register("email", { required: true })} placeholder="Email" />
                                 <br />
                                 <br />
-                                <input defaultValue={user?.photoURL ? user?.photoURL : "PhototURL not added"} className='py-1 px-2 w-full text-black' type="text" {...register("photoURL", { required: true })} placeholder="PhotoURL" />
+                                <input defaultValue={user?.photoURL } className='py-1 px-2 w-full text-black' type="text" {...register("avatar", { required: true })} placeholder="PhotoURL" />
                                 <br />
                                 <br />
                                 <textarea className='py-1 px-2 w-full text-black' type="text" {...register("reviw", { required: true })} placeholder="Your review" />
@@ -121,7 +120,7 @@ const ServiceDetails = () => {
                                         </div>
                                         {
                                     reviews.map((review) => <div key={review._id} className='flex m-3 p-3 bg-gray-800 justify-between rounded items-center text-center'>
-                                                <img className='h-12 w-12 rounded-full border-2 border-blue-400 m-1' src={user?.photoURL} alt="" />
+                                        <img className='h-12 w-12 rounded-full border-2 border-blue-400 m-1' src={review.avatar} alt="" />
                                                 <h3>{review.customer_name}</h3>
                                                 <p>{review.customer_review}</p>
                                             </div>)
