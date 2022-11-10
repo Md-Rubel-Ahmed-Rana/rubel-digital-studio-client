@@ -4,7 +4,7 @@ import useTitle from '../hooks/useTitle';
 const Blogs = () => {
     useTitle("Blogs")
     return (
-        <div className='grid grid-cols-2 px-20 py-10 gap-10 bg-black'>
+        <div className='grid lg:grid-cols-2 lg:px-20 py-10 gap-10 bg-black'>
             <div className='bg-gray-800 p-3 text-white rounded-md'>
                 <h4 className='text-2xl mb-2'>What is difference between SQL and NoSQL</h4>
                 <p>SQL is the programming language used to interface with relational databases. Relational databases model data as records in rows and tables with logical links between them. NoSQL is a class of DBMs that are non-relational and generally do not use SQL.</p>
