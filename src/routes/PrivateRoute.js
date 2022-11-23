@@ -5,7 +5,6 @@ import { ColorRing } from 'react-loader-spinner'
 
 const PrivateRoute = ({children}) => {
     const { user, loading } = useContext(AuthContext);
-
     if (loading){
         return <div className='text-center'>
             <h3 className='text-2xl'>Data Loading...</h3>
@@ -19,13 +18,12 @@ const PrivateRoute = ({children}) => {
                 />
             </div>
         </div>
-    }
+    };
     
-
     if (!user?.email){
         return <Navigate to="/forcToLogin" />
     }else{
-        return children
+        return children;
     }
 };
 
