@@ -34,7 +34,7 @@ const LimitedService = () => {
                         <h3 className='text-4xl py-2 text-white text-center'>My Services</h3>
                         <div className='lg:flex gap-5 p-2'>
                             {
-                                services.map((service) => <div className='bg-gray-700 p-3 rounded m-2 ' key={service._id}>
+                                services.map((service) => <div className='bg-gray-700 p-3 rounded m-2 animate__animated animate__backInRight' key={service._id}>
                                     <PhotoProvider>
                                         <PhotoView src={service.img}>
                                             <img className='w-full h-40 rounded' src={service.img} alt="" />

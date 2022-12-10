@@ -119,7 +119,7 @@ const ServiceDetails = () => {
                                             <h5 className='text-2xl'>Review</h5>
                                         </div>
                                         {
-                                    reviews.map((review) => <div key={review._id} className='flex m-3 p-3 bg-gray-800 justify-between rounded items-center text-center'>
+                                    reviews.map((review) => <div key={review._id} className='flex m-3 p-3 bg-gray-800 justify-between rounded items-center text-center animate__animated animate__backInUp'>
                                         <img className='h-12 w-12 rounded-full border-2 border-blue-400 m-1' src={review.avatar} alt="" />
                                                 <h3>{review.customer_name}</h3>
                                                 <p>{review.customer_review}</p>

@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import UserContext from './contexts/UserContext';
 import 'react-photo-view/dist/react-photo-view.css';
+import 'animate.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
