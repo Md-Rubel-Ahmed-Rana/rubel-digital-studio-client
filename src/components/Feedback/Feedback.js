@@ -7,7 +7,7 @@ import Hrithik_Roshan  from "../../image/Hrithik_Roshan.png"
 const Feedback = () => {
     return (
         <div className='py-10'>
-            <h3 className='text-5xl text-white font-bold text-center my-5'>Customers Feedback</h3>
+            <h3 className='lg:text-5xl text-3xl text-white font-bold text-center my-5'>Customers Feedback</h3>
             <div className='lg:flex gap-10'>
                 <div className='bg-gray-800 m-2 p-4 text-center text-white rounded-xl'>
                     <img className='w-full h-60 rounded' src={salman_khan} alt="" />

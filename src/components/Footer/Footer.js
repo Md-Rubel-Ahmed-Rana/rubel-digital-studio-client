@@ -5,7 +5,7 @@ import { FaFacebook, FaYoutube, FaLinkedinIn,  FaGithub,FaMapMarkerAlt, FaEnvelo
 const Footer = () => {
     return (
         <div>
-            <div className="lg:flex justify-around gap-5 py-5 bg-gray-700 text-white">
+            <div className="lg:flex justify-around gap-5 px-5 py-5 bg-gray-700 text-white">
                 <div>
                     <h5>Contact Details</h5>
                     <p>Websile: <a href="https://rubel-digital-studio.web.app" target="_blank" rel="noreferrer">https://rubel-digital-studio.web.app</a> </p>
@@ -32,7 +32,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <p className='text-center py-5 bg-gray-700 text-2xl text-white'>&copy; All rights are reserved by Rubel Digital Studio 2022. </p>
+            <p className='text-center py-5 bg-gray-700 lg:text-2xl text-white'>&copy; All rights are reserved by Rubel Digital Studio 2022. </p>
         </div>
     );
 };
